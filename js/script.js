@@ -35,9 +35,9 @@ function addConfetti(x, y) {
   el.style.left = (x - 4) + 'px';
   el.style.top = (y - 4) + 'px';
   el.style.position = 'absolute';
-  el.style.width = '8px';
-  el.style.height = '8px';
-  el.style.borderRadius = '50%';
+  el.style.width = '1.2vh';
+  el.style.height = '1.2vh';
+  el.style.borderRadius = '40%';
   el.style.pointerEvents = 'none';
   document.body.appendChild(el);
 
