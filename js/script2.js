@@ -2,9 +2,22 @@ const colors = ['#ff3b3b', '#ffc93c', '#75d5fd', '#b983ff', '#f72585'];
 const maxConfetti = 100;
 const trail = [];
 
+// Mouse support
 window.addEventListener('mousemove', e => {
-  addConfetti(e.pageX, e.pageY);
+  addConfetti(e.clientX, e.clientY);
 });
+
+// Touch support
+window.addEventListener('touchmove', e => {
+  // Prevent scrolling while touching
+  e.preventDefault();
+
+  // Use the first touch point
+  const touch = e.touches[0];
+  if (touch) {
+    addConfetti(touch.clientX, touch.clientY);
+  }
+}, { passive: false }); // passive: false is required to call preventDefault
 
 function addConfetti(x, y) {
   if (trail.length >= maxConfetti) {
@@ -17,6 +30,11 @@ function addConfetti(x, y) {
   el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
   el.style.left = (x - 4) + 'px';
   el.style.top = (y - 4) + 'px';
+  el.style.position = 'absolute';
+  el.style.width = '8px';
+  el.style.height = '8px';
+  el.style.borderRadius = '50%';
+  el.style.pointerEvents = 'none';
   document.body.appendChild(el);
 
   const obj = {
