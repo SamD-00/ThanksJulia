@@ -69,9 +69,3 @@ function animateTrail() {
 }
 
 animateTrail();
-
-  }
-  requestAnimationFrame(animateTrail);
-}
-
-animateTrail();
