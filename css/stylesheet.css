@@ -15,6 +15,7 @@ button {
     background-repeat: no-repeat;
     background-position: center;
     border: none;
+    color: black;
     font-size: 6vh;
     border-radius: 20px;
     font-family: monospace;
