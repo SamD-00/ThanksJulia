@@ -1,5 +1,5 @@
 document.getElementById("clc").onclick = function() {
-  window.location.href = "/html/nextpage1.html";  // Change to your target page
+  window.location.href = "https://your-username.github.io/your-repo-name/html/nextpage1.html";
 };
 const colors = ['#ff3b3b', '#ffc93c', '#75d5fd', '#b983ff', '#f72585'];
 const maxConfetti = 100;
